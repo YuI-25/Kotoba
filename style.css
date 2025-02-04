@@ -1,0 +1,110 @@
+/* reset */
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* élements génériques */
+body{
+    --couleur-fond :#71c1c9;
+    --couleur-foncee : #098a96;
+    --couleur-text : #62969c;
+      
+}
+
+/* mise en forme des titres, texts  */
+h1{
+    color: var(--couleur-foncee);
+    font-family: "Tsukimi Rounded", serif;
+    font-weight: 700;
+    font-style: normal;
+    text-align: center;
+    font-size: 3.5em;
+    margin: 40px;
+}
+
+.zoneProposition
+{
+    color: var(--couleur-foncee);
+    font-family: "Tsukimi Rounded", serif;
+    font-weight: 700;
+    font-style: normal;
+    text-align: center;
+}
+
+h2{
+    color: var(--couleur-text);
+    text-align: center;
+    margin-top: 40px;
+    margin-bottom: 10px;
+}
+
+
+p{
+    color: black;
+    text-align: center;
+}
+
+/* mise en forme de formulaire */
+
+
+/* mise en forme des parties */
+body{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+main{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border: none;
+    border-radius: 20px;
+    background-color: var(--couleur-fond);
+    margin: 40px;
+    padding: 40px;
+    width: 50%;
+}
+
+footer{
+    background-color: var(--couleur-fond);
+    color: azure;
+    padding: 40px;
+    width: 100%;
+    text-align: center;
+    position: bottom;
+    font-size: 1.3em;
+}
+
+.choixTypeJeu{
+    margin: 40px;
+}
+
+.zoneProposition{
+    color: var(--couleur-foncee);
+    font-size : 2.5em ;
+    margin-bottom: 20px;
+    background-color: azure;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-left: 80px;
+    padding-right: 80px;
+    border-radius: 20px;
+}
+
+.zoneSaisie{
+    color: azure;
+    padding: 10px;
+}
+
+.zoneSaisie[input]{
+    padding: 20px;
+    margin-bottom: 20px;
+}
+
+.reviser{
+    margin: 20px;
+}
