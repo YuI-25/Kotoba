@@ -34,4 +34,33 @@ let BtnVerifierMots = document.getElementById("BtnVerifier")
 
 // changer la liste mots en fonction de choix utilisateur et afficher dans la zone proposition 
 
+let choixUtilisateur = document.querySelectorAll(".choixTypeJeu input")
 
+choixUtilisateur.forEach((input) => {
+    input.addEventListener("change", (event)=>{
+
+        let jeuChecked = event.target.value
+
+        switch(jeuChecked){
+            case "1":
+                listeProposition = listeVerbe
+                reponseCorrect = listeVerbeRep
+                break
+             case "2":
+                listeProposition = listeNom
+                reponseCorrect = listeNomRep
+                break
+            default :
+                listeProposition = listeAdjectif
+                reponseCorrect = listeAdjectifRep
+        }
+    
+            affichageMots(listeProposition[i])
+
+    })
+})
+
+
+// 2) quand l'utilisateur tape la réponse et cliquer sur vérifier 
+        // comparer avec la reponse 
+        // puis changer le score 
