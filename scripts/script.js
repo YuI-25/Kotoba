@@ -24,12 +24,6 @@ function affichageMots (proposition) {
 affichageMots(listeProposition[i])
 
 
-// // Vérif si affichageMots fonctionne avec btn vérifier
-// let BtnVerifierMots = document.getElementById("BtnVerifier")
-//     BtnVerifierMots.addEventListener("click", ()=>{
-//         affichageMots(listeProposition[i])
-//     })
-
 // changer la liste mots en fonction de choix utilisateur et afficher dans la zone proposition 
 function choixTypeJeu(){
     let choixUtilisateur = document.querySelectorAll(".choixTypeJeu input")
@@ -65,6 +59,11 @@ function afficherScore(score, nbMotsTotal){
     votreScore.innerText = `${score}/${nbMotsTotal}`
 }
 
+function verifierDernierMot(){
+    if (listeProposition[i] === undefined){
+        affichageMots("Fin de jeu !")
+    }
+}
 
 // 2) quand l'utilisateur tape la réponse et cliquer sur vérifier 
 
@@ -106,17 +105,15 @@ function lancerJeu(){
             i_correction++      
             afficherScore(score, nbMotsTotal)   
             affichageMots(listeProposition[i])
+            verifierDernierMot()
 
         } else{
-
-            zoneProposition.innerText = "Fin de jeu !"
             BtnVerifierMots.ariaDisabled = true
+
         }
         
 
     })
-
- 
 
 }
 
