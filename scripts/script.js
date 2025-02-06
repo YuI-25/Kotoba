@@ -13,6 +13,8 @@
  let listeProposition = listeVerbe
  let listeCorrect = listeVerbeRep
  let nbMotsTotal = listeProposition.length
+ let listeMotsTrompes = []
+
 
 
 // 1) on affiche le la liste des mots dans la zone proposition 
@@ -65,6 +67,18 @@ function verifierDernierMot(){
     }
 }
 
+// ouvrir un pop up quand on click sur btn révisier
+
+function btnReviser(listeMotsTrompes){
+    let motAreviser = document.createElement("div")
+    let reviser = document.getElementById("reviser")
+    let zonePopup = document.querySelector(".zonePopup")
+
+    reviser.addEventListener("click", ()=>{
+        zonePopup.appendChild(motAreviser)
+        zonePopup.innerText = listeMotsTrompes
+    })
+}
 // 2) quand l'utilisateur tape la réponse et cliquer sur vérifier 
 
 function lancerJeu(){
@@ -78,6 +92,7 @@ function lancerJeu(){
     let zoneProposition = document.querySelector(".zoneProposition")
     let BtnVerifierMots = document.getElementById("BtnVerifier")
 
+   
     BtnVerifierMots.addEventListener("click", () => {
 
 
@@ -97,7 +112,8 @@ function lancerJeu(){
                 
             } else {
                 console.log("raté")
-                  
+                listeMotsTrompes.push(listeProposition[i])
+                listeMotsTrompes.push(listeCorrect[i_correction])
             }
 
             reponseUtilisateur.value = ""
@@ -106,15 +122,17 @@ function lancerJeu(){
             afficherScore(score, nbMotsTotal)   
             affichageMots(listeProposition[i])
             verifierDernierMot()
+            console.log(listeMotsTrompes)
 
         } else{
             BtnVerifierMots.ariaDisabled = true
 
         }
         
-
     })
 
+    btnReviser(listeMotsTrompes)
 }
 
 lancerJeu()
+
