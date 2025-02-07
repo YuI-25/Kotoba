@@ -56,9 +56,9 @@ function choixTypeJeu(){
 }
 
 // pour afficher les scores 
-function afficherScore(score, nbMotsTotal){
+function afficherScore(score, i){
     let votreScore = document.querySelector(".zoneScore span")
-    votreScore.innerText = `${score}/${nbMotsTotal}`
+    votreScore.innerText = `${score}/${i}`
 }
 
 function verifierDernierMot(){
@@ -67,16 +67,16 @@ function verifierDernierMot(){
     }
 }
 
-// ouvrir un pop up quand on click sur btn révisier
+// afficher les mots trompés quand on click sur btn révisier
 
 function btnReviser(listeMotsTrompes){
-    let motAreviser = document.createElement("div")
+    let motAreviser = document.createElement("p")
     let reviser = document.getElementById("reviser")
-    let zonePopup = document.querySelector(".zonePopup")
+    let zoneRevision = document.querySelector(".zoneRevision")
 
     reviser.addEventListener("click", ()=>{
-        zonePopup.appendChild(motAreviser)
-        zonePopup.innerText = listeMotsTrompes
+        zoneRevision.appendChild(motAreviser)
+        zoneRevision.innerText = listeMotsTrompes
     })
 }
 // 2) quand l'utilisateur tape la réponse et cliquer sur vérifier 
@@ -119,7 +119,7 @@ function lancerJeu(){
             reponseUtilisateur.value = ""
             i++
             i_correction++      
-            afficherScore(score, nbMotsTotal)   
+            afficherScore(score, i)   
             affichageMots(listeProposition[i])
             verifierDernierMot()
             console.log(listeMotsTrompes)
