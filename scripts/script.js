@@ -76,7 +76,7 @@ function btnReviser(listeMotsTrompes){
 
     reviser.addEventListener("click", ()=>{
         zoneRevision.appendChild(motAreviser)
-        zoneRevision.innerText = listeMotsTrompes
+        zoneRevision.innerText = "Les mots à apprendre : " + listeMotsTrompes
     })
 }
 // 2) quand l'utilisateur tape la réponse et cliquer sur vérifier 
