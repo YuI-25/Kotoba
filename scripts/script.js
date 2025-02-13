@@ -13,6 +13,8 @@
  let listeProposition = listeVerbe
  let listeCorrect = listeVerbeRep
  let nbMotsTotal = listeProposition.length
+ let listeMotsTrompes = []
+
 
 
 // 1) on affiche le la liste des mots dans la zone proposition 
@@ -54,9 +56,9 @@ function choixTypeJeu(){
 }
 
 // pour afficher les scores 
-function afficherScore(score, nbMotsTotal){
+function afficherScore(score, i){
     let votreScore = document.querySelector(".zoneScore span")
-    votreScore.innerText = `${score}/${nbMotsTotal}`
+    votreScore.innerText = `${score}/${i}`
 }
 
 function verifierDernierMot(){
@@ -65,6 +67,18 @@ function verifierDernierMot(){
     }
 }
 
+// afficher les mots trompés quand on click sur btn révisier
+
+function btnReviser(listeMotsTrompes){
+    let motAreviser = document.createElement("p")
+    let reviser = document.getElementById("reviser")
+    let zoneRevision = document.querySelector(".zoneRevision")
+
+    reviser.addEventListener("click", ()=>{
+        zoneRevision.appendChild(motAreviser)
+        zoneRevision.innerText = "Les mots à apprendre : " + listeMotsTrompes
+    })
+}
 // 2) quand l'utilisateur tape la réponse et cliquer sur vérifier 
 
 function lancerJeu(){
@@ -78,6 +92,7 @@ function lancerJeu(){
     let zoneProposition = document.querySelector(".zoneProposition")
     let BtnVerifierMots = document.getElementById("BtnVerifier")
 
+   
     BtnVerifierMots.addEventListener("click", () => {
 
 
@@ -97,24 +112,27 @@ function lancerJeu(){
                 
             } else {
                 console.log("raté")
-                  
+                listeMotsTrompes.push(listeProposition[i])
+                listeMotsTrompes.push(listeCorrect[i_correction])
             }
 
             reponseUtilisateur.value = ""
             i++
             i_correction++      
-            afficherScore(score, nbMotsTotal)   
+            afficherScore(score, i)   
             affichageMots(listeProposition[i])
             verifierDernierMot()
+            console.log(listeMotsTrompes)
 
         } else{
             BtnVerifierMots.ariaDisabled = true
 
         }
         
-
     })
 
+    btnReviser(listeMotsTrompes)
 }
 
 lancerJeu()
+

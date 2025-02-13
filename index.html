@@ -12,39 +12,45 @@
 <body>
     <header>
         <h1>Kotoba</h1>
-        <h2>Apprenez les mots et enrichissez vos vocabulaire en japonais !</h2>
+        <h2>Apprenez les mots et enrichissez votre vocabulaire en japonais !</h2>
     </header>
 
     <main>
-        <p>Quelle cathécorie souhaiez-vous ? Cochez votre choix ci-dessou. </p>
+        <p>Quelle catégorie souhaitez-vous ? Cochez votre choix ci-dessous. </p>
         <div class="choixTypeJeu">
             <input type="radio" name="optionType" id="verbe" value="1">
-            <label for="verbe">Verbe</label>
+            <label class="btnVerbe" for="verbe">Verbe</label>
             <input type="radio" name="optionType" id="nom" value="2">
-            <label for="nom">Nom</label>
+            <label class="btnNom" for="nom">Nom</label>
             <input type="radio" name="optionType" id="adjectif" value="3">
-            <label for="adjectif">Adjectif</label>
+            <label  for="adjectif">Adjectif</label>
         </div>
 
         <div class="zoneProposition">
             ことば
         </div>
 
-        <p>Tapez le sens de mot en français <br>
-            Attention: tappez tout en miniscule !
+
+        <p>Tapez le sens du mot en français <br>
+            Attention: tapez tout en miniscule !
+
         </p>
 
         <div class="zoneSaisie">
             
             <input type="text" id="inputReponse" name="inputReponse" placeholder="Votre réponse">
+
             <button id="BtnVerifier">Vérifier</button>
         </div>
         
         <div class="zoneScore">
-            Votre score : <span>0</span>
+            Votre score : <span>0/0</span>
         </div>
 
         <button id="reviser">Réviser</button>
+
+        <div class="zoneRevision"></div>
+
     </main>
 
     <footer>
