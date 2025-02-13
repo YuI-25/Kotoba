@@ -10,7 +10,9 @@ body{
     --couleur-fond :#71c1c9;
     --couleur-foncee : #098a96;
     --couleur-text : #62969c;
-      
+    --couleur-verbe :#B65EEB;
+    --couleur-nom :#EB945E;
+    --couleur-adjectif :#D2EB5E;
 }
 
 /* mise en forme des titres, texts  */
@@ -46,8 +48,6 @@ p{
     text-align: center;
 }
 
-/* mise en forme de formulaire */
-
 
 /* mise en forme des parties */
 body{
@@ -79,9 +79,12 @@ footer{
     font-size: 1.3em;
 }
 
+/* zone choix type jeu */
 .choixTypeJeu{
-    margin: 40px;
+    margin: 30px;
+    font-size: medium;
 }
+
 
 .zoneProposition{
     color: var(--couleur-foncee);
@@ -95,16 +98,47 @@ footer{
     border-radius: 20px;
 }
 
+/* zone saisie */
 .zoneSaisie{
     color: azure;
     padding: 10px;
 }
 
-.zoneSaisie[input]{
-    padding: 20px;
-    margin-bottom: 20px;
+#inputReponse{
+    padding: 15px 35px;
+    margin-bottom: 10px;
+    border-radius: 10px;
+    border: none;
+    box-shadow: none;
 }
 
-.reviser{
-    margin: 20px;
+#BtnVerifier{
+    margin: 10px;
+    padding: 10px;
+    border-radius: 8px;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 600;
+    font-size: 17px;
+    color: var(--couleur-foncee);
+}
+
+.zoneScore{
+    font-size: large;
+}
+
+/* btn réviser */
+#reviser{
+    margin: 10px;
+    padding: 10px;
+    border-radius: 8px;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 600;
+    font-size: 17px;
+    color: var(--couleur-foncee);
+}
+
+/* zone révision */
+.zoneRevision{
+    font-size: large;
+    font-weight: 500;
 }
